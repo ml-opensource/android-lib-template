@@ -1,27 +1,28 @@
-  on:
-    pull_request:
-      branches:
-        - main
-      types:
-        - opened
-        - synchronize
-        - reopened
-  jobs:
-    verify:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - name: Setup Java
-          uses: actions/setup-java@v1
-          with:
-           java-version: 17
+name: Verify Pull Request
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
 
-        - name: Spotless check
-          run: ./gradlew spotlessCheck
+      - name: Spotless check
+        run: ./gradlew spotlessCheck
 
-        - name: Detekt check
-          run: ./gradlew detekt
+      - name: Detekt check
+        run: ./gradlew detekt
 
-        - name: Run Tests
-          run: ./gradlew test
+      - name: Run Tests
+        run: ./gradlew test
