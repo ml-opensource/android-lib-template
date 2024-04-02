@@ -1,7 +1,11 @@
+import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.monstarlab.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.gradle.maven.publish)
 }
 
 android {
@@ -23,6 +27,13 @@ android {
 kotlin {
     jvmToolchain(17)
 }
+
+mavenPublishing {
+    configure(AndroidSingleVariantLibrary("release"))
+    publishToMavenCentral(SonatypeHost.S01)
+    signAllPublications()
+}
+
 
 dependencies {
     implementation(libs.androidx.core.ktx)
