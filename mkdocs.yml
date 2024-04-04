@@ -8,3 +8,5 @@ theme:
 
 nav:
   - 'API': api/
+  - 'Changelog': changelog.md
+

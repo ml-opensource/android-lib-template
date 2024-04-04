@@ -2,13 +2,13 @@
 
 This is a template for creating Android Open Source libraries. This template features
 
-- :rocket: Basis Project structure that includes demo and library modules
-- :octocat: CI/CD with GitHub Actions for release and snapshot builds, documentation generation
-- :mag: Code Quality checks with Detekt, Spotless and Tests
-- :book: Documentation setup with Dokka and MkDocs
-- :package: Dependency management with Version Catalogue
-- :memo: CHANGELOG following a keepchangelog.com format
-- :wrench: Gradle Convention Plugins for consistent build configuration across modules
+-  🏗️Basis Project structure that includes demo and library modules
+- 🚀 CI/CD with GitHub Actions for release and snapshot builds, documentation generation
+- 🔍 Code Quality checks with Detekt, Spotless and Tests
+- 📕 Documentation setup with Dokka and MkDocs
+- 📦 Dependency management with Version Catalogue
+- 📝 CHANGELOG following a keepchangelog.com format
+- 🔧 Gradle Convention Plugins for consistent build configuration across modules
 - 🌐 GH pages to host the documentation
 
 ## Table of Contents
