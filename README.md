@@ -9,7 +9,7 @@ This is a template for creating Android Open Source libraries. This template fea
 - :package: Dependency management with Version Catalogue
 - :memo: CHANGELOG following a keepchangelog.com format
 - :wrench: Gradle Convention Plugins for consistent build configuration across modules
-- 🌐GH pages to host the documentation
+- 🌐 GH pages to host the documentation
 
 ## Table of Contents
   - [Usage](#usage)
@@ -20,6 +20,7 @@ This is a template for creating Android Open Source libraries. This template fea
     - [Release](#release)
   - [Changelog](#changelog)
   - [Documentation](#documentation)
+    - [Github Pages](#github-pages)
   - [Contributing](#contributing)
   - [Resources](#resources)
 
