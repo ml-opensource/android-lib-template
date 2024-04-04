@@ -9,6 +9,7 @@ This is a template for creating Android Open Source libraries. This template fea
 - :package: Dependency management with Version Catalogue
 - :memo: CHANGELOG following a keepchangelog.com format
 - :wrench: Gradle Convention Plugins for consistent build configuration across modules
+- 🌐GH pages to host the documentation
 
 ## Table of Contents
   - [Usage](#usage)
@@ -88,6 +89,11 @@ Material [documentation](https://squidfunk.github.io/mkdocs-material/).
 The Dokka plugin is applied to the library module and generates KDocks documentation for the
 library. The generated documentation is published together with the project documentation and can be
 accessed using github pages.
+
+### Github Pages
+Every push to the `main` branch triggers the `Generate Docs` workflow that will generate the documentation and 
+publish it to the `gh-pages` branch. The documentation can be accessed using the following link: 
+`https://<username>.github.io/<repository-name>/`
 
 
 ## Contributing
