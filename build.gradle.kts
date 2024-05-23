@@ -1,4 +1,5 @@
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
+import org.jetbrains.changelog.date
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
@@ -40,4 +41,14 @@ spotless {
                 )
             )
     }
+}
+
+changelog {
+    path.set(file("CHANGELOG.md").canonicalPath)
+    header.set(provider { "[${version.get()}] - ${date()}" })
+    headerParserRegex.set("""(\d+\.\d+)""".toRegex())
+    keepUnreleasedSection.set(true)
+    unreleasedTerm.set("[Unreleased]")
+    groups.set(listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"))
+    lineSeparator.set("\n")
 }
