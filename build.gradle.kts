@@ -9,6 +9,8 @@ plugins {
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.kotlin.dokka)
     alias(libs.plugins.gradle.maven.publish) apply false
+    alias(libs.plugins.changelog) // Gradle Changelog Plugin
+
 }
 
 
