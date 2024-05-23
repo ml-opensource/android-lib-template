@@ -10,15 +10,13 @@ theme:
   favicon: assets/favicon.ico
 
   features:
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.path
-    - navigation.sections
-    - navigation.sections.expand
+    - content.code.copy
   name: material
   palette:
     primary: custom
     accent: custom
+  font:
+    text: 'Arimo'
 
 nav:
   - 'API': api/
