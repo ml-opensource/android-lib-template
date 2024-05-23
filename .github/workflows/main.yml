@@ -28,7 +28,7 @@ jobs:
       - name: Publish Snapshot
         run: |
           chmod +x ./publish_snapshot.sh
-          ./publish_snapshot.sh ${{secrets.ORG_GRADLE_PROJECT_MAVENCENTRALUSERNAME}} ${{secrets.ORG_GRADLE_PROJECT_MAVENCENTRALPASSWORD}}
+          ./publish_snapshot.sh ${{secrets.SONATYPE_NEXUS_USERNAME}} ${{secrets.SONATYPE_NEXUS_PASSWORD}}
 
   update_draft_release:
     name: Create or Update Draft Release
@@ -52,10 +52,12 @@ jobs:
         run: |
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           VERSION="$(echo "$PROPERTIES" | grep "^VERSION_NAME:" | cut -f2- -d ' ')"
-          chmod +x ./get_changelog.sh
-          CHANGELOG="$(./get_changelog.sh $VERSION)"
+          CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --console=plain -q)"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "changelog=$(echo "$CHANGELOG" | base64 )" >> $GITHUB_OUTPUT          
+
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
           
           # Remove old release drafts by using the curl request for the available releases with a draft flag
       - name: Remove Old Release Drafts
@@ -74,4 +76,4 @@ jobs:
           gh release create v${{ steps.properties.outputs.version }} \
             --draft \
             --title "v${{ steps.properties.outputs.version }}" \
-            --notes "$(echo "${{ steps.properties.outputs.changelog }}" | base64 --decode)"
+            --notes "$(echo "${{ steps.properties.outputs.changelog }}")"

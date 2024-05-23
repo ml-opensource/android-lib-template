@@ -1,4 +1,4 @@
-# Android Library Template
+ # Android Library Template
 
 This is a template for creating Android Open Source libraries. This template features
 
@@ -28,11 +28,10 @@ This is a template for creating Android Open Source libraries. This template fea
 1. Click on the `Use this template` button to create a new repository from this template.
 2. Update the `gradle.properties` files with the correct values for your library.
 3. Add following secrets to your repository to enable publishing to Maven Central (For more information about following properties, please refer to [Gradle Maven Publish Plugin](https://vanniktech.github.io/gradle-maven-publish-plugin/central/))
-   - `ORG_GRADLE_PROJECT_MAVENCENTRALPASSWORD` - Your Maven Central password
-   - `ORG_GRADLE_PROJECT_MAVENCENTRALUSERNAME` - Your Maven Central username
-   - `ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEY` - Your GPG key
-   - `ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEYPASSWORD` - Your GPG key password
-   - `ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEYID` - Your GPG key ID
+   - `SIGNING_PASSWORD` -  Password for the GPG key
+   - `SIGNING_PRIVATE_KEY` - GPG key
+   - `SONATYPE_NEXUS_USERNAME` - Sonatype username
+   - `SONATYPE_NEXUS_PASSWORD` - Sonatype password
 
 
 ## Branching Strategy
