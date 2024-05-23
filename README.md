@@ -7,7 +7,7 @@ This is a template for creating Android Open Source libraries. This template fea
 - 🔍 Code Quality checks with Detekt, Spotless and Tests
 - 📕 Documentation setup with Dokka and MkDocs
 - 📦 Dependency management with Version Catalogue
-- 📝 CHANGELOG following a keepchangelog.com format
+- 📝 CHANGELOG following a keepchangelog.com format and JetBrains Changelog Plugin to accompany the release notes
 - 🔧 Gradle Convention Plugins for consistent build configuration across modules
 - 🌐 GH pages to host the documentation
 
@@ -75,8 +75,7 @@ to the Maven Central.
 
 This template follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format for
 changelog entries. The changelog is stored in the `CHANGELOG.md` file.
-When Draft Release is created, the script `get_changelog.sh`
-will be executed to update the release notes with the latest changes according
+When Draft Release is created, the Changelog plugin from Jetbrains to update the release notes with the latest changes according
 to the latest version specified in the `gradle.properties` file.
 
 ## Documentation
@@ -110,4 +109,5 @@ Please make sure to update tests as appropriate.
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [Detekt](https://detekt.github.io/detekt/)
 - [Spotless](https://github.com/diffplug/spotless)
+- [Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin)
 
